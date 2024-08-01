@@ -122,50 +122,63 @@ int main()
 {
 	int opcao=0; //Definindo as variaveis
 	int loop=1;
+	char senhadm[10]= "a";
+	int comparacao;
 	
-	for(loop=1;loop=1;) //repetição
+	printf("Login de admin\n\nDigite sua senha: ");
+	scanf("%s",senhadm);
+	
+	comparacao = strcmp(senhadm, "admin");
+	
+	if(comparacao == 0)
 	{
-		
-		system("cls"); //Limpar a tela  
-		
-		setlocale(LC_ALL,"Portuguese"); //Definindo a linguagem
 	
-		printf("Empresa de Matheus\n\n"); //inicio do menu
-		printf("Escolha a opção desejada do menu:\n\n");
-		printf("\t1 - Registrar nomes\n");
-		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
-		printf("\t4 - Sair do sistema\n\n");
-		printf("Opção desejada: "); //fim do menu
-	
-		scanf("%d", &opcao); //armazenando a escolha do usuário
-	
-		system("cls");
-	
-		switch(opcao)
+		for(loop=1;loop=1;) //repetição
 		{
 			
-			case 1:
-			registro();
-			break;
+			system("cls"); //Limpar a tela  
 			
-			case 2:
-			consulta();
-			break;
+			setlocale(LC_ALL,"Portuguese"); //Definindo a linguagem
+		
+			printf("Empresa de Matheus\n\n"); //inicio do menu
+			printf("Escolha a opção desejada do menu:\n\n");
+			printf("\t1 - Registrar nomes\n");
+			printf("\t2 - Consultar nomes\n");
+			printf("\t3 - Deletar nomes\n\n");
+			printf("\t4 - Sair do sistema\n\n");
+			printf("Opção desejada: "); //fim do menu
+		
+			scanf("%d", &opcao); //armazenando a escolha do usuário
+		
+			system("cls");
+		
+			switch(opcao)
+			{
+				
+				case 1:
+				registro();
+				break;
+				
+				case 2:
+				consulta();
+				break;
+				
+				case 3:
+				deletar();
+				break;
+				
+				case 4:
+				printf("Obrigado por utilizar o nosso sistema");
+				return 0;
+				break;
 			
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar o nosso sistema");
-			return 0;
-			break;
-			
-			default:
-			padrao();
-			break;
-			
-		} 
+				default:
+				padrao();
+				break;
+				
+			} 
+		}
 	}
+	else
+	printf("\nsenha incorreta");
 }
